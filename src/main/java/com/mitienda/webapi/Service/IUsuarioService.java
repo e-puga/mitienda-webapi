@@ -2,6 +2,11 @@ package com.mitienda.webapi.Service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.mitienda.webapi.Dto.AuthRespuestaDto;
+import com.mitienda.webapi.Dto.LoginDto;
 import com.mitienda.webapi.Dto.UsuarioDto;
 
 public interface IUsuarioService {
@@ -10,5 +15,10 @@ public interface IUsuarioService {
 
 	public List<UsuarioDto> ListarUsuario();
 
-	/*public List<UsuarioDto> ListarUsuarioPaginacion(int numeroPagina, int medidaPagina);*/
+	public AuthRespuestaDto login(@RequestBody LoginDto login);
+
+	/*
+	 * public List<UsuarioDto> ListarUsuarioPaginacion(int numeroPagina, int
+	 * medidaPagina);
+	 */
 }

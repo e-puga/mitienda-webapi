@@ -22,4 +22,5 @@ public class UsuarioDto {
 	private LocalDateTime fechaModificacion;
 	private String usuarioModificacion;
 	private String estacionModificacion;
+	private RolDto rol;
 }

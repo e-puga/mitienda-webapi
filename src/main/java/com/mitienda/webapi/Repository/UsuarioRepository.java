@@ -11,4 +11,6 @@ import com.mitienda.webapi.Entity.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
 	Optional<Usuario> findByUsername(String username);
+
+	Boolean existsByUsername(String username);
 }

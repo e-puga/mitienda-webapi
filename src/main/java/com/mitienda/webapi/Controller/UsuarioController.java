@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mitienda.webapi.Dto.AuthRespuestaDto;
+import com.mitienda.webapi.Dto.LoginDto;
 import com.mitienda.webapi.Dto.UsuarioDto;
 import com.mitienda.webapi.Service.IUsuarioService;
 
@@ -46,4 +48,8 @@ public class UsuarioController {
 	 * medidaPagina), HttpStatus.OK); }
 	 */
 
+	@PostMapping("login")
+	public ResponseEntity<AuthRespuestaDto> login(@RequestBody LoginDto login) {
+		return new ResponseEntity<>(_usuarioService.login(login), HttpStatus.OK);
+	}
 }
